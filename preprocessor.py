@@ -26,6 +26,7 @@ def preprocess(data):
             messages.append(entry[0])
     df['user']=users
     df['message']=messages
+    df['month_num']=df['date'].dt.month
     df.drop(columns=['user_message'], inplace=True)
     df['year']=df['date'].dt.year
     df['month']=df['date'].dt.month_name()
