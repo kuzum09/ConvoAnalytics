@@ -6,16 +6,14 @@ import seaborn as sns
 
 
 
-
-
 # Custom CSS for centering the heading
 st.markdown(
     """
     <style>
     .centered-heading {
         text-align: center;
-        font-size: 70px;
-        color: #4B0082; /* Indigo color matching theme */
+        font-size: 100px; /* Increased font size for a larger heading */
+        color: #indigo; /* Indigo color matching theme */
         font-weight: bold;
         margin-bottom: 30px;
     }
@@ -24,8 +22,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Adding the centered heading
-st.markdown('<h1 class="centered-heading">ConvAnalytics</h1>', unsafe_allow_html=True)
+# Adding the centered heading using a <div> tag
+st.markdown('<div class="centered-heading">ConvAnalytics</div>', unsafe_allow_html=True)
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
 if uploaded_file is not None:
@@ -68,7 +66,7 @@ if uploaded_file is not None:
         st.title('Monthly Timeline')
         timeline=helper.monthly_timeline(selected_user,df)
         fig,ax=plt.subplots()
-        ax.plot(timeline['time'],timeline['message'],color='black')
+        ax.plot(timeline['time'],timeline['message'],color="#0083B8") # Set the line color here
         plt.xticks(rotation='vertical')
         st.pyplot(fig)
 
@@ -77,7 +75,7 @@ if uploaded_file is not None:
         st.title('Daily Timeline')
         daily_timeline=helper.daily_timeline(selected_user,df)
         fig,ax=plt.subplots()
-        ax.plot(daily_timeline['only_date'],daily_timeline['message'],color='black')
+        ax.plot(daily_timeline['only_date'],daily_timeline['message'],color='#0083B8')
         plt.xticks(rotation='vertical')
         st.pyplot(fig)
 
@@ -106,7 +104,7 @@ if uploaded_file is not None:
         st.title('Weekly Activity Heatmap')
         user_heatmap=helper.activity_heatmap(selected_user,df)
         fig,ax=plt.subplots()
-        ax=sns.heatmap(user_heatmap)
+        ax=sns.heatmap(user_heatmap,cmap='coolwarm')
         st.pyplot(fig)
 
         if selected_user=='Overall':
@@ -118,7 +116,7 @@ if uploaded_file is not None:
             col1, col2 = st.columns(2)
 
             with col1:
-                  ax.bar(x.index,x.values)
+                  ax.bar(x.index,x.values,color='#0083B8') # Set the bar color here
                   plt.xticks(rotation='vertical')
                   st.pyplot(fig)
             with col2:
@@ -126,7 +124,7 @@ if uploaded_file is not None:
         st.title('Word Cloud')
         df_wc=helper.create_word_cloud(selected_user,df)
         fig,ax=plt.subplots()
-        ax.imshow(df_wc)
+        ax.imshow(df_wc, interpolation='bilinear')
         st.pyplot(fig)
 
         most_common_df=helper.most_common_words(selected_user,df)
