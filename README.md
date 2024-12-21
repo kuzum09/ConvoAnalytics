@@ -1,6 +1,6 @@
 # ConvAnalytics
 
-**ConvAnalytics** is a comprehensive chat analysis tool built using Python and Streamlit. It provides in-depth insights and visualizations about WhatsApp conversations, helping users analyze patterns, activity trends, and interactions within chat data.
+**ConvAnalytics** is a comprehensive chat analysis tool built using Python, Streamlit, and Machine Learning techniques. This project provides in-depth insights and visualizations about WhatsApp conversations, helping users analyze patterns, activity trends, and interactions within chat data. Streamlit is used to create a user-friendly interface, making the analysis accessible and interactive.
 
 ## Features
 - **Top Statistics**:  
@@ -25,7 +25,7 @@
   Get insights into the most frequently used emojis.
 
 - **Custom Theming**:  
-  The app has a vibrant lavender and white theme, with a custom-styled heading for an aesthetic user interface.
+  The app has a vibrant blue and white theme, with a custom-styled heading for an aesthetic user interface.
 
 ## Installation
 
@@ -39,16 +39,15 @@ git clone https://github.com/kuzum09/ConvoAnalytics.git
 cd ConvoAnalytics
 ```
 
-###Install Dependencies
+### Install Dependencies
 ```bash
-Copy code
 pip install -r requirements.txt
 ```
 ### Run the Application
 ```bash
-Copy code
 streamlit run app.py
 ```
+
 ### Usage
 1.Export your WhatsApp chat in .txt format without media.
 
@@ -74,38 +73,50 @@ ConvoAnalytics/
 ```
 
 
-Visualization Samples
-Top Statistics
-Visualize total messages, words, media, and links shared.
+## Visualization 
+### Top Statistics
+![image](https://github.com/user-attachments/assets/eaee129c-3532-4ff7-9883-544d99b35e88)
 
-Activity Heatmap
 
-Word Cloud
+![image](https://github.com/user-attachments/assets/b94bc2b7-5579-43d0-9444-660eb2a6fc6c)
 
-(Add your generated images here to showcase your app's features.)
 
-Contributing
+
+### Activity Heatmap
+
+![image](https://github.com/user-attachments/assets/f638186b-9381-4a9c-98e7-350905437a60)
+
+
+![image](https://github.com/user-attachments/assets/e755ea25-ed63-4d05-a4b1-76d496d52f9f)
+
+
+
+### Word Cloud
+
+![image](https://github.com/user-attachments/assets/e3032b3c-1f4e-45b8-8bbe-20494b115848)
+
+
+## Contribute
 Contributions are welcome! If you'd like to improve the app or add new features, follow these steps:
 
-Fork the repository.
-Create a new branch: git checkout -b feature-name.
-Make your changes and commit: git commit -m 'Added feature-name'.
-Push to the branch: git push origin feature-name.
-Submit a pull request.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+1. Fork the repository.
+2. Create a new branch:
+```
+git checkout -b feature-name.
+```
+3. Make your changes and commit:
+```
+git commit -m 'Added feature-name'.
+```
+4. Push to the branch:
+```
+git push origin feature-name.
+```
+5. Submit a pull request.
 
-Acknowledgments
-Streamlit for providing an amazing framework.
-WordCloud and Seaborn for visualization support.
-Emojis and URLs extracted using the emoji and urlextract libraries.
-sql
-Copy code
 
-### Instructions:
-1. Save the above content into a file named `README.md`.
-2. Add the file to your Git repository:  
-   ```bash
-   git add README.md
-   git commit -m "Added README.md"
-   git push origin main
+## Acknowledgments
+1. Streamlit for providing an amazing framework.
+2. WordCloud and Seaborn for visualization support.
+3. Emojis and URLs extracted using the emoji and urlextract libraries.
+
